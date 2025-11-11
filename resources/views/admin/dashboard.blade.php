@@ -23,10 +23,10 @@
             Aulas
         </a>
 
-        <button type="button"
+        <a href="{{ route('admin.docentes.index') }}" 
             class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 rounded-lg transition duration-300 w-full">
             Docentes
-        </button>
+        </a>
         
         <a href="{{ route('admin.bitacora') }}" 
             class="bg-yellow-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300 text-center ">

@@ -48,4 +48,8 @@ class Usuario extends Authenticatable
     {
         return $this->rol && $this->rol->permisos->contains('nombre', $nombrePermiso);
     }
+    public function docente()
+    {
+        return $this->hasOne(Docente::class, 'registro', 'registro');
+    }
 }

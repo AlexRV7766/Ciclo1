@@ -55,5 +55,10 @@
             @endforelse
         </tbody>
     </table>
+    <div class="mt-8 text-center">
+        <a href="{{ route('admin.dashboard') }}" class="text-blue-600 hover:underline font-semibold">
+            ← Volver al panel
+        </a>
+    </div>
 </div>
 @endsection

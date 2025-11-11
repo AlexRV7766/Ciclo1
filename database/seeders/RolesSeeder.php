@@ -9,9 +9,16 @@ class RolesSeeder extends Seeder
 
     public function run()
         {
+            //Rol admin
             Rol::updateOrCreate(
                 ['nombre' => 'Administrador'],
                 ['descripcion' => 'Usuario con acceso total al sistema']
+            );
+
+            //Rol docente
+            Rol::updateOrCreate(
+                ['nombre' => 'Docente'],
+                ['descripcion' => 'Usuario con acceso a horarios y asistencia']
             );
         }
 }

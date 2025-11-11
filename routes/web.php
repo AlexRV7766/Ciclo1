@@ -81,6 +81,12 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
+    Route::resource('docentes', DocenteController::class);
+});
+
+
+
+Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::resource('roles', App\Http\Controllers\Admin\RolController::class)
     ->parameters(['roles' => 'rol']);
 }); 
@@ -92,6 +98,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/usuarios', [UsuarioController::class, 'index'])->name('admin.usuarios.index');
     Route::get('/usuarios/{usuario}/contratar', [UsuarioController::class, 'contratar'])->name('admin.usuarios.contratar');
 });
+
+
 
 // Panel general
 // 🧑 Panel del usuario autenticado (docente, admin, etc.)

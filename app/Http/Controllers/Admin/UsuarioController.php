@@ -77,11 +77,12 @@ class UsuarioController extends Controller
             'sueldo' => 'required|numeric|min:0',
         ]);
 
-        \App\Models\Docente::create([
-            'registro' => $usuario->registro,
-            'fecha_contrato' => $request->fecha_contrato,
+        \App\Models\Docente::updateOrcreate([
+            ['registro' => $usuario->registro],
+            ['fecha_contrato' => $request->fecha_contrato,
             'especialidad' => $request->especialidad,
             'sueldo' => $request->sueldo,
+            ]
         ]);
 
         $usuario->update(['estado' => true]);
